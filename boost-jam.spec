@@ -11,6 +11,8 @@ URL:		http://www.boost.org/
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	perl-base
 BuildRequires:	sgml-tools
+Provides:	jam
+Obsoletes:	jam
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
