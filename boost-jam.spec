@@ -1,13 +1,16 @@
 Summary:	Boost Jam - build tool
 Summary(pl):	Boost Jam - narzêdzie do budowania
 Name:		boost-jam
-Version:	3.1.4
-Release:	2
-License:	GPL
+Version:	3.1.7
+Release:	1
+License:	BSD-like
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/boost/%{name}-%{version}.tgz
-# Source0-md5:	a927ff55c830d91d27d113182e0cf043
+# Source0-md5:	cec323ceb06bc380908d5c1feae98cae
 URL:		http://www.boost.org/
+BuildRequires:	docbook-dtd41-sgml
+BuildRequires:	perl-base
+BuildRequires:	sgml-tools
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,6 +28,8 @@ ale powinien byæ wstecznie kompatybilny z Perforce Jam.
 %prep
 %setup -q
 
+%{__perl} -pi -e 's/-s -O /%{rpmldflags} /' build.jam
+
 %build
 CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
@@ -39,10 +44,16 @@ install bin/bjam $RPM_BUILD_ROOT%{_bindir}/bjam-%{version}
 ln -sf bjam-%{version} $RPM_BUILD_ROOT%{_bindir}/bjam
 ln -sf bjam-%{version} $RPM_BUILD_ROOT%{_bindir}/jam
 
+cd debian
+db2man jam.man.sgml
+install -D JAM.1 $RPM_BUILD_ROOT%{_mandir}/man1/bjam.1
+echo '.so bjam.1' > $RPM_BUILD_ROOT%{_mandir}/man1/jam.1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Jam.html Jambase.html Jamfile.html RELNOTES
+%doc Jam.html LICENSE_1_0.txt index.html
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*jam.1*
