@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/boost/%{name}-%{version}.tgz
 # Source0-md5:	8fd247425bbd12bb38114fbd8425696c
 URL:		http://www.boost.org/
 BuildRequires:	docbook-dtd41-sgml
+BuildRequires:	docbook-utils
 BuildRequires:	perl-base
 BuildRequires:	sgml-tools
 Provides:	jam
