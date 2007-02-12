@@ -1,5 +1,5 @@
 Summary:	Boost Jam - build tool
-Summary(pl):	Boost Jam - narzêdzie do budowania
+Summary(pl.UTF-8):   Boost Jam - narzÄ™dzie do budowania
 Name:		boost-jam
 Version:	3.1.13
 Release:	1
@@ -22,11 +22,11 @@ Perforce Jam. It contains significant improvements made to facilitate
 its use in the Boost Build System, but should be backward compatible
 with Perforce Jam.
 
-%description -l pl
-Boost Jam jest narzêdziem s³u¿±cym do budowania, opartym o FTJam,
-który jest dla odmiany oparty na Perforce Jam. Zawiera znacz±ce
-usprawnienia wprowadzone dla u³atwienia u¿ycia w Boost Build System,
-ale powinien byæ wstecznie kompatybilny z Perforce Jam.
+%description -l pl.UTF-8
+Boost Jam jest narzÄ™dziem sÅ‚uÅ¼Ä…cym do budowania, opartym o FTJam,
+ktÃ³ry jest dla odmiany oparty na Perforce Jam. Zawiera znaczÄ…ce
+usprawnienia wprowadzone dla uÅ‚atwienia uÅ¼ycia w Boost Build System,
+ale powinien byÄ‡ wstecznie kompatybilny z Perforce Jam.
 
 %prep
 %setup -q
