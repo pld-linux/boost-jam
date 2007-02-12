@@ -1,5 +1,5 @@
 Summary:	Boost Jam - build tool
-Summary(pl.UTF-8):   Boost Jam - narzędzie do budowania
+Summary(pl.UTF-8):	Boost Jam - narzędzie do budowania
 Name:		boost-jam
 Version:	3.1.13
 Release:	1
