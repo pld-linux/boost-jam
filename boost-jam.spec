@@ -1,12 +1,12 @@
 Summary:	Boost Jam - build tool
 Summary(pl.UTF-8):	Boost Jam - narzędzie do budowania
 Name:		boost-jam
-Version:	3.1.13
+Version:	3.1.14
 Release:	1
 License:	BSD-like
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/boost/%{name}-%{version}.tgz
-# Source0-md5:	81f5ab23de817444f66dc3edf35d5ef5
+# Source0-md5:	70d9d33c51961a6660862c35a5862e47
 URL:		http://www.boost.org/
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
