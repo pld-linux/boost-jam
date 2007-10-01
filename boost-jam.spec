@@ -1,12 +1,12 @@
 Summary:	Boost Jam - build tool
 Summary(pl.UTF-8):	Boost Jam - narzędzie do budowania
 Name:		boost-jam
-Version:	3.1.14
+Version:	3.1.15
 Release:	1
 License:	BSD-like
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/boost/%{name}-%{version}.tgz
-# Source0-md5:	70d9d33c51961a6660862c35a5862e47
+# Source0-md5:	dbf3f5a36df4c96c555e365773f54ba7
 URL:		http://www.boost.org/
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -47,11 +47,6 @@ install bin/bjam $RPM_BUILD_ROOT%{_bindir}/bjam-%{version}
 ln -sf bjam-%{version} $RPM_BUILD_ROOT%{_bindir}/bjam
 ln -sf bjam-%{version} $RPM_BUILD_ROOT%{_bindir}/jam
 
-cd debian
-db2man jam.man.sgml
-install -D JAM.1 $RPM_BUILD_ROOT%{_mandir}/man1/bjam.1
-echo '.so bjam.1' > $RPM_BUILD_ROOT%{_mandir}/man1/jam.1
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -59,4 +54,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc jam LICENSE_1_0.txt index.html images boost.png boostbook.css
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*jam.1*
