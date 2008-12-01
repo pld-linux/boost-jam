@@ -38,7 +38,7 @@ ale powinien być wstecznie kompatybilny z Perforce Jam.
 %build
 CC="%{__cc}" \
 LOCATE_TARGET=bin \
-./build.sh cc -d2 \
+./build.sh cc -d2
 
 %install
 rm -rf $RPM_BUILD_ROOT
