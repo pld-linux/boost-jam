@@ -1,12 +1,12 @@
 Summary:	Boost Jam - build tool
 Summary(pl.UTF-8):	Boost Jam - narzędzie do budowania
 Name:		boost-jam
-Version:	3.1.16
+Version:	3.1.17
 Release:	1
 License:	BSD-like
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/boost/%{name}-%{version}.tgz
-# Source0-md5:	1fd96a38b1a33c365e8142eec53197e7
+# Source0-md5:	f4afd896788f2327fd35c128ddc6e340
 URL:		http://www.boost.org/
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -32,12 +32,13 @@ ale powinien być wstecznie kompatybilny z Perforce Jam.
 %setup -q
 
 %{__perl} -pi -e 's/-s -O /%{rpmldflags} /' build.jam
+# CFLAGS must be given in this way to avoid incorrect "" argument when building
+%{__perl} -pi -e 's/\$\(CFLAGS\)/%{rpmcflags}/' build.jam
 
 %build
 CC="%{__cc}" \
-CFLAGS="%{rpmcflags}" \
 LOCATE_TARGET=bin \
-./build.sh cc -d2
+./build.sh cc -d2 \
 
 %install
 rm -rf $RPM_BUILD_ROOT
