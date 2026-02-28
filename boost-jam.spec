@@ -2,7 +2,7 @@ Summary:	Boost Jam - build tool
 Summary(pl.UTF-8):	Boost Jam - narzędzie do budowania
 Name:		boost-jam
 Version:	3.1.18
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Development/Tools
 Source0:	http://downloads.sourceforge.net/boost/%{name}-%{version}.tgz
